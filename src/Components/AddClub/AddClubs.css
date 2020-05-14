@@ -1,0 +1,12 @@
+.add-club{
+     margin: 20px 0;
+     display:flex;
+     flex-direction:column
+}
+.inputValue{
+     border: 3px solid #42a5f5;
+     margin: 0 0 15px 0
+}
+.text-area{
+     border:3px solid #42a5f5
+}

@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import Navbar from './Components/Navbar/Navbar'
+import Clubs from './Components/Clubs/Clubs'
+import AddClubs from './Components/AddClub/AddClubs'
+import './App.css'
+
 
 function App() {
+  const [clubs, setClubs] = useState([])
+  const addClub = (club) => {
+    setClubs([...clubs, club])
+    console.log(clubs)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <div className='app-body'>     
+            <Navbar /> 
+              <div className='about-clubs'>
+                  <div className='app-club'>
+                    <Clubs clubs={clubs}/>
+                  </div>
+                    <div className='app-add'>
+                        <AddClubs add={addClub}/>
+                    </div>
+                </div>
+        </div>
   );
 }
 
