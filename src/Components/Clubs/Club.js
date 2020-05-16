@@ -6,27 +6,35 @@ import { Divider } from "@chakra-ui/core";
 import './Clubs.css'
 import blue from '@material-ui/core/colors/blue'
 
+
 const  background = blue[500]
 const color=blue[500]
 
-const Club = ({Tittle,Description}) => {
+const Club = ({tittle,description,deleteClub}) => {
      const [show, setShow] = useState(false);
           return (
                <div className='club'>
                     <Card>
                          <Card.Body>
                               <Card.Text>
-                                   {Tittle}
+                                   {tittle}
                               </Card.Text>
                               <Divider style={{color:(color)}}/>
                               <Card.Text>
                                    Click on the button below to know more about this club
                               </Card.Text>
                               </Card.Body>
-                                   <div className='card-btn'>
-                                        <Button className="about-btn" variant="primary" onClick={() => setShow(true)}>
-                                             See More
-                                        </Button>
+                                   <div className='button'>
+                                        <div className='card-btn'>
+                                             <Button className="about-btn" variant="primary" onClick={() => setShow(true)}>
+                                                  See More
+                                             </Button>
+                                        </div>
+                                        <div className='card-btn'>
+                                             <Button className="about-btn" variant="primary" onClick={() => deleteClub(description)}>
+                                                  Delete Club
+                                             </Button>
+                                        </div>
                                    </div>
                               </Card>
 
@@ -39,13 +47,13 @@ const Club = ({Tittle,Description}) => {
 
                               <Modal.Header closeButton style={{backgroundColor:(background)}}>
                               <Modal.Title className=" madal-title" id="example-custom-modal-styling-title" >
-                                   {Tittle}
+                                   {tittle}
                               </Modal.Title>
                               </Modal.Header>
 
                               <Modal.Body >
                               <p className='modal-body'>
-                                   {Description}
+                                   {description}
                               </p>
                               </Modal.Body>
                               </Modal>

@@ -7,8 +7,8 @@ class Clubs extends Component {
       <div>
         {
             this.props.clubs.map(club=>(
-              <div>
-                    <Club Tittle={club.title} Description={club.description} key={club.description}/>
+              <div key={club.description}>
+                    <Club tittle={club.title} description={club.description} deleteClub={this.props.deleteClub} />
             </div>
           ))
         }

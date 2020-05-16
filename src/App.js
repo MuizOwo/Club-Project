@@ -11,12 +11,17 @@ function App() {
     setClubs([...clubs, club])
     console.log(clubs)
   }
+
+  const deleteClub = description => {
+    var newClub = clubs.filter(todo=> todo.description !== description)
+      setClubs(newClub)
+  }
   return (
         <div className='app-body'>     
             <Navbar /> 
               <div className='about-clubs'>
                   <div className='app-club'>
-                    <Clubs clubs={clubs}/>
+                    <Clubs clubs={clubs} deleteClub={deleteClub}/>
                   </div>
                     <div className='app-add'>
                         <AddClubs add={addClub}/>

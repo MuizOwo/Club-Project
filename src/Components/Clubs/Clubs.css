@@ -11,3 +11,8 @@
      margin: 15px 0px ;
      
 }
+.button{
+     display:flex;
+     flex-direction:row;
+     justify-content:space-between
+}
